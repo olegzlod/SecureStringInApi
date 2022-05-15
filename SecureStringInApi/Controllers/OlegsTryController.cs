@@ -26,7 +26,9 @@ namespace SecureStringInApi.Controllers
         {
             return new AllData
             {
+                // original uploaded credit card data returned masked
                 CreditCard = creditCard,
+                // an example to get the sensitive data as a plain text
                 OriginalData = creditCard.CreditCardNumber.SecureStringToString()
             };
             

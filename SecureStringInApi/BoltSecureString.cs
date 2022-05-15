@@ -46,6 +46,7 @@ namespace SecureStringInApi
             }
             get
             {
+                //return masked value
                 return _strBld.ToString();
             }
         }
