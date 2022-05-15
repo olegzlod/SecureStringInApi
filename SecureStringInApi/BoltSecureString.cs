@@ -56,20 +56,14 @@ namespace SecureStringInApi
             _securedValue.Dispose();
         }
 
+        // returns the value as pain text
         public string SecureStringToString()
         {
             SecureString value = _securedValue;
             IntPtr valuePtr = IntPtr.Zero;
-            //try
-            //{
+            
             valuePtr = Marshal.SecureStringToGlobalAllocUnicode(value);
             return Marshal.PtrToStringUni(valuePtr);
-            //}
-            //finally
-            //{
-            //    Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
-            //}
-
 
             //#if NET45
             //                Password = Marshal.SecureStringToGlobalAllocUnicode(password);
